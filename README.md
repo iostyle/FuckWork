@@ -1,0 +1,2 @@
+# FuckWork
+least &amp; best 
