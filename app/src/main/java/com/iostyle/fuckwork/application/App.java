@@ -7,6 +7,8 @@ import android.app.Service;
 import android.content.BroadcastReceiver;
 import android.content.ContentProvider;
 import com.iostyle.fuckwork.dagger.core.DaggerAppComponent;
+import com.orhanobut.logger.AndroidLogAdapter;
+import com.orhanobut.logger.Logger;
 import dagger.android.*;
 import dagger.android.support.HasSupportFragmentInjector;
 
@@ -42,6 +44,11 @@ public class App extends Application
     public void onCreate() {
         super.onCreate();
         injectIfNecessary();
+        init();
+    }
+
+    private void init(){
+        Logger.addLogAdapter(new AndroidLogAdapter());
     }
 
     private void injectIfNecessary() {
